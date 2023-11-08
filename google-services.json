@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "415340726884",
+    "project_id": "digibank-f63d0",
+    "storage_bucket": "digibank-f63d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415340726884:android:6ead6a3da4fcef4f3d2d71",
+        "android_client_info": {
+          "package_name": "com.adb.personal.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuoJBFLqpqMhfUNoMFtLn45ELEUb5b-ZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "415340726884-05ahfreo72d533v0qgd6mus11cd8uf9s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.digital101.digibank.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415340726884:android:9054e791d34ca5023d2d71",
+        "android_client_info": {
+          "package_name": "com.template_app.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuoJBFLqpqMhfUNoMFtLn45ELEUb5b-ZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "415340726884-05ahfreo72d533v0qgd6mus11cd8uf9s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.digital101.digibank.dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415340726884:android:1fee5965a5f667953d2d71",
+        "android_client_info": {
+          "package_name": "org.digital101.digibank.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuoJBFLqpqMhfUNoMFtLn45ELEUb5b-ZU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415340726884-2qslnigd91ecc0cq3rr4v02av5vl7j31.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "415340726884-05ahfreo72d533v0qgd6mus11cd8uf9s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.digital101.digibank.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
