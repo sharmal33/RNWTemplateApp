@@ -41,7 +41,7 @@
     "react-native-safe-area-context": "4.7.1",
     "react-native-screens": "3.24.0",
     "react-native-splash-screen": "3.3.0",
-    "react-native-svg": "12.1.1",
+    "react-native-svg": "14.0.0",
     "react-native-svg-transformer": "1.1.0",
     "react-native-theme-component": "https://github.com/101digital/tomato-pay-react-native-theme-component.git#appStudio/1.0.7",
     "react-native-user-profile-component": "https://github.com/101digital/react-native-user-profile-component.git#1.0.3",
