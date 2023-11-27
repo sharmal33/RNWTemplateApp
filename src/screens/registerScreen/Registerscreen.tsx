@@ -1,21 +1,20 @@
 import React, { useRef, useContext, useEffect, useState } from 'react';
   import { StyleSheet, SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
+  import { Layouts } from 'react-native-theme-component';
   
-
-  const Registerscreen: React.FC<RegisterscreenProps> = ({ navigation, route }) => {
+  const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation, route }) => {
   
-
     return (
       <SafeAreaView style={styles.container}>
-         <Text>Registerscreen</Text>
+      <Layouts type='form'>
+         <Text>RegisterScreen</Text>
+    </Layouts>
       </SafeAreaView>
     );
   };
-
 const styles = StyleSheet.create({
-  "container": {
-    "flex": 1
+  container: {
+    flex: 1
   }
 });
-
-export default Registerscreen
+export default RegisterScreen

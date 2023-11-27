@@ -1,37 +1,44 @@
-import React, {useEffect} from 'react';
-import AppNavigator from '@/navigation/AppNavigator';
-import {LogBox} from 'react-native';
+import React, { useEffect } from "react";
+import AppNavigator from "@/navigation/AppNavigator";
+import { LogBox } from "react-native";
 
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import {NavigationContainer} from '@react-navigation/native';
-import {navigationRef} from '@/navigation/NavigationService';
+import { NavigationContainer } from "@react-navigation/native";
+import { navigationRef } from "@/navigation/NavigationService";
 
-import themeData from '@/assets/theme-data';
-import {ThemeProvider} from 'react-native-theme-component';
+import themeData from "@/assets/theme-data";
+import { ThemeProvider } from "react-native-theme-component";
 
-import SplashScreen from 'react-native-splash-screen';
-LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+import SplashScreen from "react-native-splash-screen";
+LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
 LogBox.ignoreAllLogs(); //Ignore all log notifications
-import env from '@/env';
+import env from "@/env";
 
 import {
   MemberShipService,
   UserProvider,
-} from 'react-native-user-profile-component';
+} from "react-native-user-profile-component";
 import {
   WalletProvider,
   ProductInfoProvider,
   WalletService,
   ProductInfoService,
-} from 'react-native-dashboard-component';
+} from "react-native-dashboard-component";
 
 import {
   AuthComponent,
   AuthProvider,
   createAppTokenApiClient,
   createAuthorizedApiClient,
-} from 'react-native-auth-component';
+} from "react-native-auth-component";
+
+import {
+  FinancialService,
+  FinanceProvider,
+} from "react-native-financial-profile-component";
+
+import { BranchProvider } from "react-native-branch-component";
 
 // If you wanna avoid overwrite your codes, please add your code inside ignore overwrite block
 
@@ -54,17 +61,22 @@ AuthComponent.instance()
   .then(() => {
     MemberShipService.instance().initClients({
       memberShipClient: createAuthorizedApiClient(
-        env.api.apiBaseUrl + env.api.membershipBaseUrl,
+        env.api.apiBaseUrl + env.api.membershipBaseUrl
       ),
     });
     WalletService.instance().initClients({
       walletClient: createAuthorizedApiClient(
-        env.api.apiBaseUrl + env.api.walletBaseUrl,
+        env.api.apiBaseUrl + env.api.walletBaseUrl
       ),
     });
     ProductInfoService.instance().initClients({
       productInfoClient: createAuthorizedApiClient(
-        env.api.apiBaseUrl + env.api.bankingProductInfoBaseUrl,
+        env.api.apiBaseUrl + env.api.bankingProductInfoBaseUrl
+      ),
+    });
+    FinancialService.instance().initClients({
+      financialClient: createAuthorizedApiClient(
+        env.api.apiBaseUrl + env.api.financialBaseUrl
       ),
     });
   });
@@ -82,15 +94,19 @@ const App = () => {
     <ThemeProvider theme={themeData}>
       <AuthProvider>
         <UserProvider>
-          <ProductInfoProvider>
-            <WalletProvider>
-              <SafeAreaProvider>
-                <NavigationContainer ref={navigationRef}>
-                  <AppNavigator />
-                </NavigationContainer>
-              </SafeAreaProvider>
-            </WalletProvider>
-          </ProductInfoProvider>
+          <BranchProvider>
+            <FinanceProvider>
+              <ProductInfoProvider>
+                <WalletProvider>
+                  <SafeAreaProvider>
+                    <NavigationContainer ref={navigationRef}>
+                      <AppNavigator />
+                    </NavigationContainer>
+                  </SafeAreaProvider>
+                </WalletProvider>
+              </ProductInfoProvider>
+            </FinanceProvider>
+          </BranchProvider>
         </UserProvider>
       </AuthProvider>
     </ThemeProvider>

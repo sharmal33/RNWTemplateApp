@@ -1,5 +1,5 @@
 // import config from 'react-native-config';
-console.log('process.env ');
+console.log("process.env ");
 
 const env = {
   api: {
@@ -13,12 +13,12 @@ const env = {
     apiBaseUrl: process.env.EXPO_PUBLIC_API_BASE_URL, // [auth-component] This line is generated automatically. Please don't remove it
     membershipBaseUrl: process.env.EXPO_PUBLIC_MEMBERSHIP_BASE_URL, // [user-profile-component] This line is generated automatically. Please don't remove it
     walletBaseUrl: process.env.EXPO_PUBLIC_WALLET_BASE_URL, // [dashboard-component] This line is generated automatically. Please don't remove it
-    bankingProductInfoBaseUrl: process.env.EXPO_PUBLIC_BANKING_PRODUCT_INFO_BASE_URL, // [dashboard-component] This line is generated automatically. Please don't remove it
+    bankingProductInfoBaseUrl:
+      process.env.EXPO_PUBLIC_BANKING_PRODUCT_INFO_BASE_URL, // [dashboard-component] This line is generated automatically. Please don't remove it
+    financialBaseUrl: process.env.FINANCIAL_BASE_URL, // [financial-profile-component] This line is generated automatically. Please don't remove it
   },
 };
 
-
-console.log('process.env ',env);
-
+console.log("process.env ", env);
 
 export default env;
