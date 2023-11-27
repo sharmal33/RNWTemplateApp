@@ -34,7 +34,7 @@ export const defaultBackButton = (navigation: any) => {
 const AppNavigator = ({ navigation }: any) => {
   return (
     <Stack.Navigator
-      initialRouteName={Route.LOGIN_SCREEN}
+      initialRouteName={Route.HOME_SCREEN}
       mode="modal"
       screenOptions={{
         gestureEnabled: true,
