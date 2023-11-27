@@ -1,5 +1,5 @@
 const MainRoutes = {
- 
+
     AUTH_NAVIGATOR: 'auth-navigator', 
 
     MAIN_NAVIGATOR: 'main-navigator', 

@@ -1,5 +1,6 @@
 import React, { useRef, useContext, useEffect, useState } from 'react';
   import { StyleSheet, SafeAreaView, Text, View, TouchableOpacity } from 'react-native';
+  import { Layouts } from 'react-native-theme-component';
   import { useRoute } from '@react-navigation/native';
 import { fonts } from '@/assets/fonts';
 import { AccountSummaryComponent } from 'react-native-dashboard-component';
@@ -73,8 +74,8 @@ const customStyles = {
     fontFamily: fonts.regular,
   },
 };
-
-  const Accountsummaryscreen: React.FC<AccountsummaryscreenProps> = ({ navigation, route }) => {
+import {useConditions} from 'react-native-branch-component';
+  const AccountSummaryScreen: React.FC<AccountSummaryScreenProps> = ({ navigation, route }) => {
      const { isFinance } = route.params;
 
    const [showDeposit, setShowDeposit] = useState(!isFinance);
@@ -87,9 +88,10 @@ const customStyles = {
    const toggleFinance = () => {
      setShowFinance(!showFinance);
    };
-
+const { defCond } = useConditions()
     return (
       <SafeAreaView style={styles.container}>
+      <Layouts type='form'>
           <>
             <View style={{flex: 1}}>
                <AccountSummaryComponent
@@ -100,14 +102,13 @@ const customStyles = {
                 /> 
             </View>
         </>
+    </Layouts>
       </SafeAreaView>
     );
   };
-
 const styles = StyleSheet.create({
-  "container": {
-    "flex": 1
+  container: {
+    flex: 1
   }
 });
-
-export default Accountsummaryscreen
+export default AccountSummaryScreen

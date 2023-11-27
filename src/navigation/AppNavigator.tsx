@@ -1,38 +1,73 @@
-import {createStackNavigator} from '@react-navigation/stack';
-import React, {useEffect} from 'react';
-import {getSecureData} from '@/utils/keychainStorage';
-import AuthNavigator from './AuthNavigator';
-import MainNavigator from './MainNavigator';
-import {useAuth} from 'react-native-auth-component';
-import Route from './routes';
+import React from "react";
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from "@react-navigation/stack";
+import Route from "./routes";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import ArrowBackSvg from "../assets/images/arrow-back.svg";
 
-type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
-
-export type AppNavigatorParams = {
-  [Route.AUTH_NAVIGATOR]: undefined;
-  [Route.MAIN_NAVIGATOR]: undefined;
-};
+import LoginScreen from "@/screens/loginScreen/LoginScreen";
+import HomeScreen from "@/screens/homeScreen/HomeScreen";
+import TransferScreen from "@/screens/transferScreen/TransferScreen";
+import AccountSummaryScreen from "@/screens/accountSummaryScreen/AccountSummaryScreen";
+import FinanceScreen from "@/screens/financeScreen/FinanceScreen";
+import ProfileSummaryScreen from "@/screens/profileSummaryScreen/ProfileSummaryScreen";
+import RegisterScreen from "@/screens/registerScreen/RegisterScreen";
 
 const Stack = createStackNavigator();
 
-const AppNavigator = (props: Partial<StackNavigatorProps>) => {
-  const {user} = useAuth();
-
+export const defaultBackButton = (navigation: any) => {
   return (
-    <Stack.Navigator {...props} headerMode="none">
-      {user ? (
-        <Stack.Screen name={Route.MAIN_NAVIGATOR} component={MainNavigator} />
-      ) : (
-        <Stack.Screen
-          name={Route.AUTH_NAVIGATOR}
-          component={AuthNavigator}
-          options={{
-            animationTypeForReplace: user ? 'push' : 'pop',
-          }}
-        />
-      )}
+    <TouchableOpacity
+      activeOpacity={0.8}
+      style={styles.backIcon}
+      onPress={() => {
+        navigation.goBack();
+      }}
+    >
+      <ArrowBackSvg width={18} height={18} fill="#000" />
+    </TouchableOpacity>
+  );
+};
+
+const AppNavigator = ({ navigation }: any) => {
+  return (
+    <Stack.Navigator
+      initialRouteName={Route.LOGIN_SCREEN}
+      mode="modal"
+      screenOptions={{
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        headerBackTitleVisible: false,
+        headerTitleAlign: "center",
+        headerLeft: (props) => props.canGoBack && defaultBackButton(navigation),
+      }}
+      headerMode="none"
+    >
+      <Stack.Screen name={Route.LOGIN_SCREEN} component={LoginScreen} />
+      <Stack.Screen name={Route.HOME_SCREEN} component={HomeScreen} />
+      <Stack.Screen name={Route.TRANSFER_SCREEN} component={TransferScreen} />
+      <Stack.Screen
+        name={Route.ACCOUNT_SUMMARY_SCREEN}
+        component={AccountSummaryScreen}
+      />
+      <Stack.Screen name={Route.FINANCE_SCREEN} component={FinanceScreen} />
+      <Stack.Screen
+        name={Route.PROFILE_SUMMARY_SCREEN}
+        component={ProfileSummaryScreen}
+      />
+      <Stack.Screen name={Route.REGISTER_SCREEN} component={RegisterScreen} />
     </Stack.Navigator>
   );
 };
+
+const styles = StyleSheet.create({
+  backIcon: {
+    paddingVertical: 15,
+    paddingHorizontal: 24,
+  },
+});
 
 export default AppNavigator;
