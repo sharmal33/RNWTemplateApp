@@ -7,13 +7,13 @@ import Route from "./routes";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import ArrowBackSvg from "../assets/images/arrow-back.svg";
 
-import LoginScreen from "@/screens/loginScreen/LoginScreen";
-import HomeScreen from "@/screens/homeScreen/HomeScreen";
-import TransferScreen from "@/screens/transferScreen/TransferScreen";
-import AccountSummaryScreen from "@/screens/accountSummaryScreen/AccountSummaryScreen";
-import FinanceScreen from "@/screens/financeScreen/FinanceScreen";
-import ProfileSummaryScreen from "@/screens/profileSummaryScreen/ProfileSummaryScreen";
-import RegisterScreen from "@/screens/registerScreen/RegisterScreen";
+import LoginScreen from "../screens/loginScreen/Loginscreen";
+import HomeScreen from "../screens/homeScreen/Homescreen";
+import TransferScreen from "../screens/transferScreen/TransferScreen";
+import AccountSummaryScreen from "../screens/accountSummaryScreen/Accountsummaryscreen";
+import FinanceScreen from "../screens/financeScreen/Financescreen";
+import ProfileSummaryScreen from "../screens/profileSummaryScreen/Profilesummaryscreen";
+import RegisterScreen from "../screens/registerScreen/Registerscreen";
 
 const Stack = createStackNavigator();
 
@@ -34,7 +34,7 @@ export const defaultBackButton = (navigation: any) => {
 const AppNavigator = ({ navigation }: any) => {
   return (
     <Stack.Navigator
-      initialRouteName={Route.HOME_SCREEN}
+      initialRouteName={Route.LOGIN_SCREEN}
       mode="modal"
       screenOptions={{
         gestureEnabled: true,

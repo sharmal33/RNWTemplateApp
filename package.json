@@ -30,7 +30,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.45.4",
     "react-native": "0.72.6",
-    "react-native-auth-component": "https://github.com/101digital/react-native-auth-component.git#appStudio/1.0.10",
+    "react-native-auth-component": "https://github.com/101digital/react-native-auth-component.git#appStudio/1.0.11",
     "react-native-config": "^1.5.1",
     "react-native-dashboard-component": "https://github.com/101digital/react-native-dashboard-component.git#1.0.5",
     "react-native-device-info": "^10.11.0",

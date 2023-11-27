@@ -10,9 +10,9 @@
          container: {
            flex: 1,
            backgroundColor: theme.colors.lightGray,
+           marginTop:50
          },
          wrapper: {
-           paddingTop: 10,
            paddingHorizontal: 15,
            flex: 1,
          },
